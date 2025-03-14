@@ -5,6 +5,7 @@
 //  Created by Daive Simoes on 14/03/25.
 //
 
+import FoundationUtilities
 import UIKit
 
 class ViewController: UIViewController {
@@ -12,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        print("Empty String from framework: \(String.emptyString)")
+        
     }
 
 

@@ -4,4 +4,7 @@
    <FileRef
       location = "group:SAE/SAE.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SAE/Modules/FoundationUtilities/FoundationUtilities.xcodeproj">
+   </FileRef>
 </Workspace>
