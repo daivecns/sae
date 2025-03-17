@@ -1,0 +1,6 @@
+ strings:
+   inputs:
+     - SAE/SAE/Resources
+   outputs:
+     - templateName: structured-swift5
+       output: SAE/SAE/Resources/Generated/Strings+Generated.swift

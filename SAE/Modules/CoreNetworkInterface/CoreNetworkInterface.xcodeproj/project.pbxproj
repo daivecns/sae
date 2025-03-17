@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		697503832D8470CA00DB262F /* CoreNetworkInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6975037A2D8470CA00DB262F /* CoreNetworkInterface.framework */; };
+		6975039B2D84712200DB262F /* CoreNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6975039A2D84712200DB262F /* CoreNetwork.framework */; };
+		6975039C2D84712200DB262F /* CoreNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6975039A2D84712200DB262F /* CoreNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,9 +22,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6975039D2D84712300DB262F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6975039C2D84712200DB262F /* CoreNetwork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6975037A2D8470CA00DB262F /* CoreNetworkInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreNetworkInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		697503822D8470CA00DB262F /* CoreNetworkInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreNetworkInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6975039A2D84712200DB262F /* CoreNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6975039B2D84712200DB262F /* CoreNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +93,7 @@
 			children = (
 				6975037C2D8470CA00DB262F /* CoreNetworkInterface */,
 				697503862D8470CA00DB262F /* CoreNetworkInterfaceTests */,
+				697503992D84712200DB262F /* Frameworks */,
 				6975037B2D8470CA00DB262F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +105,14 @@
 				697503822D8470CA00DB262F /* CoreNetworkInterfaceTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		697503992D84712200DB262F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6975039A2D84712200DB262F /* CoreNetwork.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +136,7 @@
 				697503762D8470CA00DB262F /* Sources */,
 				697503772D8470CA00DB262F /* Frameworks */,
 				697503782D8470CA00DB262F /* Resources */,
+				6975039D2D84712300DB262F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +187,7 @@
 				TargetAttributes = {
 					697503792D8470CA00DB262F = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 					};
 					697503812D8470CA00DB262F = {
 						CreatedOnToolsVersion = 16.0;
@@ -174,6 +203,8 @@
 			);
 			mainGroup = 697503702D8470CA00DB262F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6975037B2D8470CA00DB262F /* Products */;
 			projectDirPath = "";
@@ -232,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -260,6 +292,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -269,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

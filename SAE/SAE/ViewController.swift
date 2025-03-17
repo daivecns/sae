@@ -13,11 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        print("Empty String from framework: \(String.emptyString)")
-        
+        view.backgroundColor = .red
     }
 
-
 }
-

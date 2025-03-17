@@ -6,5 +6,7 @@
 //
 
 public extension String {
-    static let emptyString = "Teste"
+    
+    static let emptyString = ""
+    
 }

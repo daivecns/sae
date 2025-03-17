@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6975034A2D846FE200DB262F /* FoundationUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697503492D846FE200DB262F /* FoundationUtilities.framework */; };
-		6975034B2D846FE200DB262F /* FoundationUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 697503492D846FE200DB262F /* FoundationUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		697503972D84711700DB262F /* CoreNetworkInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697503962D84711700DB262F /* CoreNetworkInterface.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,32 +28,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		6975034C2D846FE300DB262F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6975034B2D846FE200DB262F /* FoundationUtilities.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		6975020F2D84692D00DB262F /* SAE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697502252D84692F00DB262F /* SAETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6975022F2D84692F00DB262F /* SAEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		697503492D846FE200DB262F /* FoundationUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FoundationUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		697503932D84710900DB262F /* CoreNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		697503962D84711700DB262F /* CoreNetworkInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreNetworkInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		697502372D84692F00DB262F /* Exceptions for "SAE" folder in "SAE" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 6975020E2D84692D00DB262F /* SAE */;
 		};
@@ -85,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				697503972D84711700DB262F /* CoreNetworkInterface.framework in Frameworks */,
 				6975034A2D846FE200DB262F /* FoundationUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +119,8 @@
 		6975031F2D846D5300DB262F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				697503962D84711700DB262F /* CoreNetworkInterface.framework */,
+				697503932D84710900DB262F /* CoreNetwork.framework */,
 				697503492D846FE200DB262F /* FoundationUtilities.framework */,
 			);
 			name = Frameworks;
@@ -145,11 +136,11 @@
 				6975020B2D84692D00DB262F /* Sources */,
 				6975020C2D84692D00DB262F /* Frameworks */,
 				6975020D2D84692D00DB262F /* Resources */,
-				6975034C2D846FE300DB262F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				69BE45832D88B2F500DA0BF1 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				697502112D84692D00DB262F /* SAE */,
@@ -231,14 +222,18 @@
 				};
 			};
 			buildConfigurationList = 6975020A2D84692D00DB262F /* Build configuration list for PBXProject "SAE" */;
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"pt-BR",
+				en,
 			);
 			mainGroup = 697502062D84692D00DB262F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				69BE457E2D88B1E100DA0BF1 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 697502102D84692D00DB262F /* Products */;
 			projectDirPath = "";
@@ -310,6 +305,10 @@
 			target = 6975020E2D84692D00DB262F /* SAE */;
 			targetProxy = 697502302D84692F00DB262F /* PBXContainerItemProxy */;
 		};
+		69BE45832D88B2F500DA0BF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 69BE45822D88B2F500DA0BF1 /* SwiftLintBuildToolPlugin */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -322,7 +321,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WMY4PSQ44N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SAE/Info.plist;
+				INFOPLIST_FILE = SAE/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SAE;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -354,7 +355,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WMY4PSQ44N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SAE/Info.plist;
+				INFOPLIST_FILE = SAE/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SAE;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -382,6 +385,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -445,6 +449,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -608,6 +613,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		69BE457E2D88B1E100DA0BF1 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.58.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		69BE45822D88B2F500DA0BF1 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69BE457E2D88B1E100DA0BF1 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 697502072D84692D00DB262F /* Project object */;
 }
